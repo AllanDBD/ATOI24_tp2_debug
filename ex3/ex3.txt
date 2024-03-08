@@ -1,0 +1,5 @@
+a) Une fuite mémoire se produit lorsqu'un programme informatique alloue de la mémoire dynamiquement mais ne la libère pas correctement lorsqu'elle n'est plus nécessaire. 
+Cela peut entraîner une utilisation excessive de la mémoire système, ralentir les performances de l'application voire provoquer un plantage complet du système.
+
+b) J'utilise la commande valgrind --leak-check=full pour trouver la fuite.
+

@@ -1,0 +1,11 @@
+a) Le code est vulnérable car la saisie n'est pas sécurisée et que la taille du buffer est trop petite. Si on entre une saisie plus grand que 8 caractère, 
+on aura un débordement et la suite sera stockée dans l'espace mémoire réservé à password_is_good. Si la saisie est très grande on aura un problème d'overflow 
+car l'espace mémoire de password_is_good sera saturé et ne pourra plus accueillir la fin de la saisie.
+
+b) [][][][][][][][][\0] --> [sizeof(int)]
+    Mémoire de buffer    Mémoire de password_is_good
+
+c) Pour déclencher une erreur il suffit d'entrer une chaine de caractère assez grande pour saturé les espaces mémoires de buffer et password_is_good.
+Exemple: testestestestestestestest
+
+d) Il faut que le 9ème et dernier caractère qu'on entre dans la saisie soit "a".

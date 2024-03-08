@@ -1,0 +1,6 @@
+a) Il y a une erreur de segmentation.
+
+b) L'erreur est dans la cas d'arrêt de la fonction récursive car quand n prend une valeur négative la fonction s'appelle indéfiniment jusqu'à ce que cela plante à 
+cause d'un overflow.
+
+c) n < 0 -----> n <= 1

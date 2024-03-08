@@ -1,0 +1,16 @@
+a) Le programme renvoie la somme de toutes les valeurs stockées dans le tableau array.
+
+b) Le programme fonctionne.
+
+c) On utilise un breakpoint et un display pour afficher la valeur de la somme à chaque tour de boucle:
+
+gdb somme
+break somme.c:9
+run
+display sum
+continue
+continue
+...
+
+d) La boucle for tourne une fois quand i=5 alors qu'il faudrait s'arrêter un tour avant car array[5] pose problème. La valeur de la somme est 15.
+Il suffit de remplacer <= par < dans la boucle for.

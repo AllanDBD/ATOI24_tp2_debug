@@ -1,0 +1,23 @@
+a)
+process_data est fausse car la boucle continue tant que i est inférieur à size or quand i sera égale à size data[i] posera problème car la dernière valeur dans le tableau est \0.
+
+process_data2 est fausse car on va sortir du tableau quand i sera supérieur à size or la boucle continue jusqu'à ce que i soit supérieur ou égale à size + 50.
+
+process_data3 est également fausse car on va sortir du tableau data quand i prendra une valeur supérieure à size.
+
+b)
+Process_data ne plante pas le programme et ne retourne pas d'erreur.
+
+process_data2 a l'erreur suivante et plante le programme. 
+double free or corruption (!prev)
+Aborted (core dumped)
+
+process_data3 a une erreur de segmentation et plante le programme.
+Segmentation fault (core dumped)
+
+c) valgrind trouve des erreurs dans les 3 fonctions, chacune d'elle sort du tableau data, il nous dit également que process_data3 provoque un overflow.
+gdb ne nous affiche que l'erreur de process_data3: Segmentation fault in process_data3 ()
+
+d) Dans certains cas, une corruption de la mémoire peut ne pas causer de problèmes immédiats et peut passer inaperçue pendant un certain temps. 
+Cependant, dans d'autres cas, cela peut entraîner des comportements inattendus, des bugs ou même des plantages du programme.
+

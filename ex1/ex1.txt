@@ -1,0 +1,13 @@
+a) Le main créer les images carre.ppm et contours.ppm grâce aux fonctions de ppm.c, draw_square et apply_laplacien.
+Les filtres laplaciens sont souvent utilisés pour détecter les contours dans des images, on stocke le résultat dans un tableau. 
+La convolution permet de faire des opérations  binaires sur les tableaux obtenus.
+
+c) L'image carre.ppm est créée mais la création de contours.ppm ne s'effectue pas.
+
+d) Il y a une erreur de segmentation. Pour la trouver j'utilise les commandes gdb main puis run.
+Le système a trouvé l'erreur et m'affiche: 
+at main.c:23    src->px[(y - 1) * src->width + x].r +
+y est initialisé à 0 donc srx->px[x] avec x<0 est une erreur car y-1 avec y=0 est égale à -1.
+
+valgrind ./main m'affiche des erreurs dans apply_laplacien, je change mes boucles pour qu'elle s'arrête un tour plus tôt et les éviter.
+

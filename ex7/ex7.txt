@@ -1,0 +1,12 @@
+a) Un thread est une séquence d'instruction exécutée par un processus. Les threads se partagent l'espace mémoire et il peut y avoir plusieurs threads fonctionnant 
+simultanément.
+Les mutex sont utilisés pour synchroniser les threads et nous garantir qu'il n'y ait qu'un thread à la fois qui ait accès à des ressources partagées. 
+Ce code créé deux threads qui s'échangent des mutex.
+
+b) Il faut ajouter la bibliothèque des threads avec -pthread.
+
+c) On peut utiliser des breakpoints et voir l'état des threads actifs grâce à la commande info threads.
+La commande thread apply all bt permet d'afficher les piles d'exécutions de tous les threads en cours.
+
+d) Pour corriger le code il faut s'assurer qu'il n'y ait plus de blocage mutuel entre les threads. Pour cela il suffit de faire en sorte que que 
+tous les threads acquièrent les mutex dans le même ordre. 

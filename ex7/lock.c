@@ -28,20 +28,20 @@ void *thread1(void *arg) {
 
 void *thread2(void *arg) {
     printf("Thread 2: Tente d'obtenir lock2\n");
-    pthread_mutex_lock(&lock2);
+    pthread_mutex_lock(&lock1);
     printf("Thread 2: A obtenu lock2\n");
 
     // Attendez un court instant pour simuler un travail
     sleep(1);
 
     printf("Thread 2: Tente d'obtenir lock1\n");
-    pthread_mutex_lock(&lock1);
+    pthread_mutex_lock(&lock2);
     printf("Thread 2: A obtenu lock1\n");
 
-    pthread_mutex_unlock(&lock1);
+    pthread_mutex_unlock(&lock2);
     printf("Thread 2: Relâche lock1\n");
     
-    pthread_mutex_unlock(&lock2);
+    pthread_mutex_unlock(&lock1);
     printf("Thread 2: Relâche lock2\n");
 
     return NULL;
